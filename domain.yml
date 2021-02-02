@@ -1,0 +1,176 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- atm_abroad_withdraw
+- atm_territory_withdraw
+- atm_trans
+- atm_withdraw
+- bankcard_withdraw_limit
+- bye
+- card_limit
+- card_limit_abroad
+- card_limit_territory
+- card_withdraw_limit
+- check_annual_fee
+- check_credit_limit
+- check_details
+- check_rate
+- chitchat
+- credit_limit
+- credit_withdraw_limit
+- greet
+- hand_credit_limit
+- inform
+- inform_card
+- inform_credit
+- inform_deposit
+- inform_financial 
+- inform_loan
+- inform_mobile
+- inform_professional
+- message_credit_limit
+- mobile_credit_limit
+- mobile_trans
+- onlinebank_credit_limit
+- onlinepay_limit
+- pos_limit
+- professional_limit
+- professional_trans
+- public_trans
+- thankyou
+- trans_limt
+- transaction_limit
+- what_is_professional_version
+- what_is_public_version
+- yiwangtong_limit
+actions:
+- utter_ask_card_type
+- utter_ask_rate_type
+- utter_ask_transaction_limit_first_level
+- utter_ask_transaction_limit_credit
+- utter_ask_mode
+- utter_ask_transaction_limit_online_payment
+- utter_ask_transaction_limit_card
+- utter_ask_transaction_limit_bank_withdraw
+- utter_ask_transaction_limit_bank_withdraw_card
+- utter_ask_transaction_limit_pos
+- utter_bye
+- utter_check_annual_fee
+- utter_check_details
+- utter_check_rate
+- utter_chitchat
+- utter_greet
+- utter_thankyou
+- utter_transaction_limit
+- utter_what_is_professional_version
+- utter_what_is_public_version
+- utter_default
+entities:
+- card_type
+- rate_type
+- transaction_limit_first_level
+- transaction_limit_credit
+- mode
+- transaction_limit_online_payment
+- transaction_limit_card
+- transaction_limit_bank_withdraw
+- transaction_limit_bank_withdraw_card
+- transaction_limit_pos
+slots:
+  card_type:
+    auto_fill: true
+    type: unfeaturized
+  rate_type:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_first_level:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_credit:
+    auto_fill: true
+    type: unfeaturized
+  mode:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_online_payment:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_card:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_bank_withdraw:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_bank_withdraw_card:
+    auto_fill: true
+    type: unfeaturized
+  transaction_limit_pos:
+    auto_fill: true
+    type: unfeaturized
+    
+responses:
+  utter_ask_more_help:
+  - text: 请问还有什么可以帮您？
+  utter_ask_card_type:
+  - text: 一卡通'\r'信用卡
+  utter_ask_rate_type:
+  - text: 请问您需要查询贷款利率、存款利率和理财产品利率？
+  utter_ask_transaction_limit_first_level:
+  - text: 请问您是想查询以下哪种额度：信用卡额度 转账汇款限额 网上支付 银行卡取款 POS刷卡
+  utter_ask_transaction_limit_credit:
+  - text: 请问您想查询哪种情况的额度：使用中的 制卡中的
+  utter_ask_mode:
+  - text: 请问您是要查询一下哪种版本：专业版  大众版 手机银行
+  utter_ask_mode_detail:
+  - text: 您想查询以下哪个版本的明细："专业版"\ "大众版"\"手机银行"     
+  utter_ask_mode_credit_limit:
+  - text: 您想通过以下哪种渠道查询信用卡额度：手机银行 掌上生活 网上银行 短信
+  utter_ask_mode_trans_limit:
+  - text: 可通过以下渠道查看：手机银行 专业版 大众版 ATM
+  utter_ask_transaction_limit_online_payment:
+  - text: 您可以通过对应的支付方式查看额度：一网通支付 信用卡支付 快捷支付 专业版支付
+  utter_ask_transaction_limit_card:
+  - text: 请选择以下渠道：境内 境外
+  utter_ask_transaction_limit_bank_withdraw:
+  - text: 您使用一卡通取款还是信用卡取款
+  utter_ask_transaction_limit_bank_withdraw_card:
+  - text: 请问您是查询ATM取款限额还是柜台取款限额
+  utter_ask_transaction_limit_pos:
+  - text: 请问您是要查询一卡通刷卡限额还是信用卡刷卡限额
+  utter_check_annual_fee:
+  - text: 请问是要查以下哪种卡片的年费
+  utter_check_details:
+  - text: 请问是查看一卡通还是信用卡的明细
+  utter_check_rate:
+  - text: 请问查询哪种利率，贷款，存款，理财产品
+  utter_transaction_limit:
+  - text: 请问查看哪种交易限额：信用卡限额
+                             转账汇款限额
+                             银行卡取款限额
+                             pos机刷卡限额
+  utter_bye:
+  - text: 再见，祝您生活愉快！
+  utter_default:
+  - text: 请详细说明下您的问题哦
+  utter_greet:
+  - text: 您好，请问有什么可以帮您
+  utter_submit:
+  - text: 测试
+  utter_thankyou:
+  - text: 好的，祝您生活愉快！
+  utter_wrong:
+  - text: 输入有误，请重新输入
+  utter_chitchat:
+  - text: 我目前能回答的是银行业务相关的问题哦
+  utter_what_is_public_version:
+  - text: 个人银行大众版是为客户提供全天候银行金融服务的网上银行系统，可以办理查询账户余额和交易明细，修改密码等。
+  utter_what_is_professional_version:
+  - text: 专业版是网银的一种，需要在柜台申请ukey（即移动证书，像U盘一样），配合电脑下载的专业版客户端使用。
+
+forms:
+- check_annual_fee_form
+- check_details_form
+- check_rate_form
+- transaction_limit_form
