@@ -1,1 +1,16 @@
 
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: thanks
+  steps:  
+  - intent: thankyou
+  - action: utter_thankyou
+    
+- story: bye
+  steps:
+  - intent: bye
+  - action: utter_bye
