@@ -1,60 +1,92 @@
-
 version: "2.0"
 
 nlu:
-- intent: bye
-  examples: |
-    - 好 的 吧
-    - 嗯 嗯
-    - 哦 哦
-    - 再 见 吧
-    - 下 次 见
-    - 好 啊
-    - 暂 时 不 办 了
-    - 不 问 了
-    - 我 不 想 查 了
-    - 嗯 好 的
-    - 不 想 办 了
-    - 好 的
-    - 我 不 想 办 理 了
-    - 拜 拜 了
-    - 不 办 了
-    - 再 会
-    - 嗯
-    - 拜 拜
-    - 好 哦
-    - 回 头 见
-    - 再 见
-    - 先 不 办 了
-    
 - intent: greet
-  examples: |    
-    - 下 午 好
-    - 早 啊
-    - 您 好
-    - 中 午 好
-    - 早
-    - 哈 喽
-    - 你 好 哦
-    - 你 好 啊
-    - 你 好 哟
-    - 你 好 呀
-    - 晚 上 好
-    - 早 上 好
-    - 嗨
-    
-- intent: thankyou
-  examples: | 
-    - 谢 谢 啦
-    - 太 谢 谢 你 了
-    - 谢 谢 你 啦
-    - 非 常 感 谢
-    - 谢 谢
-    - 谢 谢 你
-    - 真 是 太 感 谢 了
-    - 谢 谢 咯
-    - 太 感 谢 你 了
-    - 致 谢
-    - 真 是 麻 烦 你 了 谢 谢 啊
-    - 非 常 感 谢
-    - 感 谢
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
