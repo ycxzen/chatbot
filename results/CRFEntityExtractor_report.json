@@ -1,0 +1,117 @@
+{
+  "mode": {
+    "precision": 0.9989693377995362,
+    "recall": 1.0,
+    "f1-score": 0.9994844031967003,
+    "support": 3877,
+    "confused_with": {}
+  },
+  "rate_type": {
+    "precision": 0.9753086419753086,
+    "recall": 1.0,
+    "f1-score": 0.9875,
+    "support": 158,
+    "confused_with": {}
+  },
+  "transaction_limit_bank_withdraw_card": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 70,
+    "confused_with": {}
+  },
+  "transaction_limit_card": {
+    "precision": 0.9897959183673469,
+    "recall": 1.0,
+    "f1-score": 0.9948717948717948,
+    "support": 194,
+    "confused_with": {}
+  },
+  "transaction_limit_online_payment": {
+    "precision": 1.0,
+    "recall": 0.9848484848484849,
+    "f1-score": 0.9923664122137404,
+    "support": 330,
+    "confused_with": {
+      "transaction_limit_first_level": 5
+    }
+  },
+  "transaction_limit_first_level": {
+    "precision": 0.9612068965517241,
+    "recall": 0.8425692695214105,
+    "f1-score": 0.897986577181208,
+    "support": 794,
+    "confused_with": {
+      "card_type": 75
+    }
+  },
+  "transaction_limit_bank_withdraw": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 237,
+    "confused_with": {}
+  },
+  "repayment_method_other": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 44,
+    "confused_with": {}
+  },
+  "repayment_method_own_other": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 34,
+    "confused_with": {}
+  },
+  "transaction_limit_pos": {
+    "precision": 0.9695817490494296,
+    "recall": 1.0,
+    "f1-score": 0.9845559845559846,
+    "support": 255,
+    "confused_with": {}
+  },
+  "password_type": {
+    "precision": 0.987012987012987,
+    "recall": 0.977491961414791,
+    "f1-score": 0.9822294022617125,
+    "support": 622,
+    "confused_with": {}
+  },
+  "transaction_limit_credit": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 138,
+    "confused_with": {}
+  },
+  "card_type": {
+    "precision": 0.972972972972973,
+    "recall": 0.999104744852283,
+    "f1-score": 0.9858657243816255,
+    "support": 3351,
+    "confused_with": {
+      "transaction_limit_first_level": 3
+    }
+  },
+  "micro avg": {
+    "precision": 0.9855488468771652,
+    "recall": 0.9854513064133017,
+    "f1-score": 0.9855000742317018,
+    "support": 10104
+  },
+  "macro avg": {
+    "precision": 0.9888345002868697,
+    "recall": 0.9849241892797667,
+    "f1-score": 0.9865277152817513,
+    "support": 10104
+  },
+  "weighted avg": {
+    "precision": 0.9854433321920378,
+    "recall": 0.9854513064133017,
+    "f1-score": 0.9850710534820404,
+    "support": 10104
+  }
+}

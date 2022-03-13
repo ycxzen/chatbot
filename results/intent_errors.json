@@ -1,0 +1,154 @@
+[
+  {
+    "text": "是 自 动 取 款 机",
+    "intent": "inform_atm",
+    "intent_prediction": {
+      "name": "auto_repayment",
+      "confidence": 0.28577762842178345
+    }
+  },
+  {
+    "text": "我 行",
+    "intent": "own_bank",
+    "intent_prediction": {
+      "name": "bye",
+      "confidence": 0.3485361933708191
+    }
+  },
+  {
+    "text": "查 取 款 的",
+    "intent": "inform_bankcard",
+    "intent_prediction": {
+      "name": "withdrawal_password",
+      "confidence": 0.25361305475234985
+    }
+  },
+  {
+    "text": "查 下 a t m 取 款 的",
+    "intent": "atm_withdraw",
+    "intent_prediction": {
+      "name": "check_atm_withdraw",
+      "confidence": 0.3761396110057831
+    }
+  },
+  {
+    "text": "境 内 刷 卡 额 度",
+    "intent": "inform_territory",
+    "intent_prediction": {
+      "name": "check_card_limit_territory",
+      "confidence": 0.3962213397026062
+    }
+  },
+  {
+    "text": "需 要 了 解 信 用 卡 的 信 息",
+    "intent": "inform_credit",
+    "intent_prediction": {
+      "name": "check_credit_limit",
+      "confidence": 0.3374635577201843
+    }
+  },
+  {
+    "text": "还 在 做",
+    "intent": "inform_making_card",
+    "intent_prediction": {
+      "name": "inform_using",
+      "confidence": 0.3326585292816162
+    }
+  },
+  {
+    "text": "信 用 卡 还 在 做",
+    "intent": "inform_making_card",
+    "intent_prediction": {
+      "name": "check_repayment_method",
+      "confidence": 0.1850050389766693
+    }
+  },
+  {
+    "text": "我 想 短 信 提 醒 的 方 式 查 询",
+    "intent": "inform_message",
+    "intent_prediction": {
+      "name": "check_sms_reminder",
+      "confidence": 0.8576933145523071
+    }
+  },
+  {
+    "text": "我 想 要 查 询 网 上 支 付 的",
+    "intent": "inform_onlinepay",
+    "intent_prediction": {
+      "name": "check_onlinepay_limit",
+      "confidence": 0.4795253872871399
+    }
+  },
+  {
+    "text": "怎 么 还 咱 们 银 行 的 信 用 卡",
+    "intent": "own_bank_repayment_method",
+    "intent_prediction": {
+      "name": "other_bank_repayment_method",
+      "confidence": 0.30687105655670166
+    }
+  },
+  {
+    "text": "我 想 自 动 动 手 转 账 来 还 其 他 行 的 信 用 卡",
+    "intent": "manual_transfer_other_bank_repayment",
+    "intent_prediction": {
+      "name": "auto_repayment_other_bank",
+      "confidence": 0.44434666633605957
+    }
+  },
+  {
+    "text": "开 通 一 卡 通 的",
+    "intent": "inform_card",
+    "intent_prediction": {
+      "name": "card_bank_name",
+      "confidence": 0.6346398591995239
+    }
+  },
+  {
+    "text": "结 束 办 理",
+    "intent": "bye",
+    "intent_prediction": {
+      "name": "check_onlinepay_limit",
+      "confidence": 0.15318548679351807
+    }
+  },
+  {
+    "text": "登 录 密 码 怎 么 修 改",
+    "intent": "change_card_login_password",
+    "intent_prediction": {
+      "name": "login_password",
+      "confidence": 0.3111937940120697
+    }
+  },
+  {
+    "text": "我 想 用 大 众 版 查 下 开 户 行 信 用 卡 的",
+    "intent": "credit_bank_name",
+    "intent_prediction": {
+      "name": "public_card_bank_name",
+      "confidence": 0.37254923582077026
+    }
+  },
+  {
+    "text": "新 下 来 的 信 用 卡 怎 么 查 询 额 度",
+    "intent": "check_credit_limit_using",
+    "intent_prediction": {
+      "name": "check_credit_limit",
+      "confidence": 0.6651158332824707
+    }
+  },
+  {
+    "text": "我 的 信 用 卡 正 在 使 用 我 想 查 看 信 用 卡 刷 卡 限 制 的 额 度 求 攻 略",
+    "intent": "check_credit_shuaka_limit",
+    "intent_prediction": {
+      "name": "check_credit_limit_using",
+      "confidence": 0.522195041179657
+    }
+  },
+  {
+    "text": "我 的 银 行 卡 丢 了 我 要 怎 么 做 才 能 知 道 最 近 的 消 费 记 录",
+    "intent": "check_details",
+    "intent_prediction": {
+      "name": "check_banlance",
+      "confidence": 0.15657345950603485
+    }
+  }
+]
