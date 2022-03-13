@@ -1,0 +1,767 @@
+version: "2.0"
+stories:
+- story: form happypath
+  steps:
+  - intent: check_details
+  - action: check_details_form
+  - active_loop: check_details_form
+  - active_loop: null
+  - action: action_submit_results
+
+- story: stop form + stop
+  steps:
+  - intent: check_details
+  - action: check_details_form
+  - active_loop: check_details_form
+  - intent: bye
+  - action: utter_bye
+  - action: action_deactivate_loop
+  - active_loop: null
+
+- story: form_end_another_slot
+  steps:
+  - intent: check_details
+  - action: check_details_form
+  - active_loop: check_details_form
+  - active_loop: null
+  - action: action_submit_results
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_details_form
+  - active_loop: check_details_form
+  - active_loop: null
+  - action: action_submit_results
+
+- story: form_end_another_slot2
+  steps:
+  - intent: check_details
+  - action: check_details_form
+  - active_loop: check_details_form
+  - active_loop: null
+  - action: action_submit_results
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_details_form
+  - active_loop: check_details_form
+  - active_loop: null
+  - action: action_submit_results
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_details_form
+  - active_loop: check_details_form
+  - active_loop: null
+  - action: action_submit_results
+
+- story: form transaction happypath
+  steps:
+  - or:
+    - intent: check_transaction_limit
+    - intent: check_trans_limt
+    - intent: check_credit_limit
+    - intent: check_bankcard_withdraw_limit
+    - intent: check_pos_limit
+    - intent: check_onlinepay_limit
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+
+- story: form transaction and slots
+  steps:
+  - intent: check_trans_limt
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+    - intent: inform_atm
+      entities:
+      - mode: A T M
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+
+- story: form transaction and slots2
+  steps:
+  - intent: check_trans_limt
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+    - intent: inform_atm
+      entities:
+      - mode: A T M
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+  - or:
+    - intent: inform
+      entities:
+        - mode: 大 众 版
+    - intent: inform_mobile
+      entities:
+        - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+        - mode: 专 业 版
+    - intent: inform_atm
+      entities:
+        - mode: A T M
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+
+- story: check_credit_limit and slots
+  steps:
+  - intent: check_credit_limit
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+  - or:
+    - intent: inform_onlinebank
+      entities:
+      - mode: 网 上 银 行
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_handlife
+      entities:
+      - mode: 掌 上 生 活
+    - intent: inform_message
+      entities:
+      - mode: 短 信
+    - intent: inform_making_card
+      entities:
+      - transaction_limit_credit: 制 卡
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+
+- story: bankcard_withdraw_limit and slots
+  steps:
+  - intent: check_bankcard_withdraw_limit
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+  - or:
+    - intent: card_withdraw
+      entities:
+      - transaction_limit_bank_withdraw: 一 卡 通 取 款
+    - intent: credit_withdraw
+      entities:
+      - transaction_limit_bank_withdraw: 信 用 卡 取 款
+    - intent: inform_atm
+      entities:
+      - transaction_limit_bank_withdraw_card: a t m
+    - intent: inform_guitai
+      entities:
+      - transaction_limit_bank_withdraw_card: 柜 台
+    - intent: inform_territory
+      entities:
+      - transaction_limit_card: 境 内
+    - intent: inform_abroad
+      entities:
+      - transaction_limit_card: 境 外
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+
+- story: check_pos_limit and slots
+  steps:
+  - intent: check_pos_limit
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+  - or:
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: check_card_limit
+      entities:
+      - transaction_limit_pos: 一 卡 通 刷 卡
+    - intent: check_credit_shuaka_limit
+      entities:
+      - transaction_limit_pos: 信 用 卡 刷 卡
+    - intent: inform_territory
+      entities:
+      - transaction_limit_card: 境 内
+    - intent: inform_abroad
+      entities:
+      - transaction_limit_card: 境 外
+  - action: check_translimit_form
+  - active_loop: check_translimit_form
+  - active_loop: null
+  - action: action_submit_translimit
+
+- story: check_banlance happypathtrain
+  steps:
+  - intent: check_banlance
+  - action: check_banlance_form
+  - active_loop: check_banlance_form
+  - active_loop: null
+  - action: action_submit_banlance
+
+- story: check_banlance and slots
+  steps:
+  - intent: check_banlance
+  - action: check_banlance_form
+  - active_loop: check_banlance_form
+  - active_loop: null
+  - action: action_submit_banlance
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_banlance_form
+  - active_loop: check_banlance_form
+  - active_loop: null
+  - action: action_submit_banlance
+
+- story: check_banlance and slots2
+  steps:
+  - intent: check_banlance
+  - action: check_banlance_form
+  - active_loop: check_banlance_form
+  - active_loop: null
+  - action: action_submit_banlance
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_banlance_form
+  - active_loop: check_banlance_form
+  - active_loop: null
+  - action: action_submit_banlance
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_banlance_form
+  - active_loop: check_banlance_form
+  - active_loop: null
+  - action: action_submit_banlance
+
+- story: check_bank_name happypath
+  steps:
+  - intent: check_bank_name
+  - action: check_bank_name_form
+  - active_loop: check_bank_name_form
+  - active_loop: null
+  - action: action_submit_bank_name
+
+- story: check_bank_name and slots
+  steps:
+  - intent: check_bank_name
+  - action: check_bank_name_form
+  - active_loop: check_bank_name_form
+  - active_loop: null
+  - action: action_submit_bank_name
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_bank_name_form
+  - active_loop: check_bank_name_form
+  - active_loop: null
+  - action: action_submit_bank_name
+
+- story: check_bank_name and slots2
+  steps:
+  - intent: check_bank_name
+  - action: check_bank_name_form
+  - active_loop: check_bank_name_form
+  - active_loop: null
+  - action: action_submit_bank_name
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_bank_name_form
+  - active_loop: check_bank_name_form
+  - active_loop: null
+  - action: action_submit_bank_name
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_bank_name_form
+  - active_loop: check_bank_name_form
+  - active_loop: null
+  - action: action_submit_bank_name
+
+
+- story: check_rate happypath
+  steps:
+  - intent: check_rate
+  - action: check_rate_form
+  - active_loop: check_rate_form
+  - active_loop: null
+  - action: action_submit_rate
+
+- story: check_rate and slots
+  steps:
+  - intent: check_rate
+  - action: check_rate_form
+  - active_loop: check_rate_form
+  - active_loop: null
+  - action: action_submit_rate
+  - or:
+    - intent: loan
+      entities:
+      - rate_type: 存 款
+    - intent: deposit
+      entities:
+      - rate_type: 贷 款
+    - intent: financial_product
+      entities:
+      - rate_type: 理 财
+  - action: check_rate_form
+  - active_loop: check_rate_form
+  - active_loop: null
+  - action: action_submit_rate
+
+
+- story: check_annual_fee happypath
+  steps:
+  - intent: check_annual_fee
+  - action: check_annual_fee_form
+  - active_loop: check_annual_fee_form
+  - active_loop: null
+  - action: action_submit_annual_fee
+
+- story: check_annual_fee and slots
+  steps:
+  - intent: check_annual_fee
+  - action: check_annual_fee_form
+  - active_loop: check_annual_fee_form
+  - active_loop: null
+  - action: action_submit_annual_fee
+  - or:
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+  - action: check_annual_fee_form
+  - active_loop: check_annual_fee_form
+  - active_loop: null
+  - action: action_submit_annual_fee
+
+- story: check_annual_fee and slots2
+  steps:
+  - intent: check_annual_fee
+  - action: check_annual_fee_form
+  - active_loop: check_annual_fee_form
+  - active_loop: null
+  - action: action_submit_annual_fee
+  - or:
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+  - action: check_annual_fee_form
+  - active_loop: check_annual_fee_form
+  - active_loop: null
+  - action: action_submit_annual_fee
+  - or:
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+  - action: check_annual_fee_form
+  - active_loop: check_annual_fee_form
+  - active_loop: null
+  - action: action_submit_annual_fee
+
+- story: check_integral happypath
+  steps:
+  - intent: check_integral
+  - action: check_integral_form
+  - active_loop: check_integral_form
+  - active_loop: null
+  - action: action_submit_integral
+
+- story: check_integral and slots
+  steps:
+  - intent: check_integral
+  - action: check_integral_form
+  - active_loop: check_integral_form
+  - active_loop: null
+  - action: action_submit_integral
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+    - intent: inform_handlife
+      entities:
+      - mode: 掌 上 生 活
+    - intent: inform_onlinebank
+      entities:
+      - mode: 网 上 银 行
+    - intent: wechat
+      entities:
+      - mode: 微 信
+  - action: check_integral_form
+  - active_loop: check_integral_form
+  - active_loop: null
+  - action: action_submit_integral
+
+- story: check_integral and slots2
+  steps:
+  - intent: check_integral
+  - action: check_integral_form
+  - active_loop: check_integral_form
+  - active_loop: null
+  - action: action_submit_integral
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+    - intent: inform_handlife
+      entities:
+      - mode: 掌 上 生 活
+    - intent: inform_onlinebank
+      entities:
+      - mode: 网 上 银 行
+    - intent: wechat
+      entities:
+      - mode: 微 信
+  - action: check_integral_form
+  - active_loop: check_integral_form
+  - active_loop: null
+  - action: action_submit_integral
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+    - intent: inform_handlife
+      entities:
+      - mode: 掌 上 生 活
+    - intent: inform_onlinebank
+      entities:
+      - mode: 网 上 银 行
+    - intent: wechat
+      entities:
+      - mode: 微 信
+  - action: check_integral_form
+  - active_loop: check_integral_form
+  - active_loop: null
+  - action: action_submit_integral
+
+- story: check_password happypath
+  steps:
+  - intent: check_password
+  - action: check_password_form
+  - active_loop: check_password_form
+  - active_loop: null
+  - action: action_submit_password
+
+- story: check_password and slots
+  steps:
+  - intent: check_password
+  - action: check_password_form
+  - active_loop: check_password_form
+  - active_loop: null
+  - action: action_submit_password
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+    - intent: login_password
+      entities:
+      - password_type: 登 录
+    - intent: query_password
+      entities:
+      - password_type: 查 询
+    - intent: withdrawal_password
+      entities:
+      - password_type: 取 款
+    - intent: transaction_password
+      entities:
+      - password_type: 交 易
+    - intent: payment_password
+      entities:
+      - password_type: 支 付
+  - action: check_password_form
+  - active_loop: check_password_form
+  - active_loop: null
+  - action: action_submit_password
+
+- story: check_sms_reminder happypath
+  steps:
+  - intent: check_sms_reminder
+  - action: check_sms_reminder_form
+  - active_loop: check_password_form
+  - active_loop: null
+  - action: action_submit_sms_reminder
+
+- story: check_sms_reminder and slots
+  steps:
+  - intent: check_sms_reminder
+  - action: check_sms_reminder_form
+  - active_loop: check_password_form
+  - active_loop: null
+  - action: action_submit_sms_reminder
+  - or:
+    - intent: inform
+      entities:
+      - mode: 大 众 版
+    - intent: inform_card
+      entities:
+      - card_type: 一 卡 通
+    - intent: inform_credit
+      entities:
+      - card_type: 信 用 卡
+    - intent: inform_mobile
+      entities:
+      - mode: 手 机 银 行
+    - intent: inform_professional
+      entities:
+      - mode: 专 业 版
+  - action: check_sms_reminder_form
+  - active_loop: check_sms_reminder_form
+  - active_loop: null
+  - action: action_submit_sms_reminder
+
+- story: check_repayment_method happypath
+  steps:
+  - intent: check_repayment_method
+  - action: check_repayment_method_form
+  - active_loop: check_repayment_method_form
+  - active_loop: null
+  - action: action_submit_repayment_method
+
+- story: check_repayment_method and slots
+  steps:
+  - intent: check_repayment_method
+  - action: check_repayment_method_form
+  - active_loop: check_repayment_method_form
+  - active_loop: null
+  - action: action_submit_repayment_method
+  - or:
+    - intent:  other_bank
+      entities:
+      - repayment_method_own_other: 他 行
+    - intent: own_bank
+      entities:
+      - repayment_method_own_other: 本 行
+    - intent: manual_transfer
+      entities:
+      - repayment_method_other: 手 动
+    - intent: auto_repayment
+      entities:
+      - repayment_method_other: 自 动
+  - action: check_repayment_method_form
+  - active_loop: check_repayment_method_form
+  - active_loop: null
+  - action: action_submit_repayment_method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
