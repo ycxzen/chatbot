@@ -7,3 +7,7 @@
 
 ![dialogue_3.png](https://s2.loli.net/2022/03/13/aCXpZ5Mkcb1qeRr.png)
 
+场景分支图如下：
+
+
+![Scenes_branch.png](https://s2.loli.net/2022/03/13/9qejYNol6h2wzyL.png)
