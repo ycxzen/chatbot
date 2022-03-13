@@ -1,0 +1,188 @@
+version: "2.0"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: bye
+    - action: utter_bye
+
+  - rule: Say hi
+    steps:
+    - intent: greet
+    - action: utter_greet
+#在form收集完slot之后，进行回复。为什么steps是这两步 而没有
+  - rule: submit check_details form
+    condition:
+    - active_loop: check_details_form
+    steps:
+    - action: check_details_form
+    - active_loop: null
+    - action: action_submit_results
+#每次只要是check_detail的意图就进入check_detail_form里面去，这和写在story的区别是？后面是否需要写active_loop: null
+  - rule: active check_details form
+    steps:
+    - intent: check_details
+    - action: check_details_form
+    - active_loop: check_details_form
+
+
+  - rule: active check_translimit_form
+    steps:
+    - intent: check_transaction_limit
+    - action: check_translimit_form
+    - active_loop: check_translimit_form
+
+  - rule: submit check_translimit_form
+    condition:
+    - active_loop: check_translimit_form
+    steps:
+    - action: check_translimit_form
+    - active_loop: null
+    - action: action_submit_translimit
+#当第一句话说交易限额这个场景的第一级slot时，就进入该form，这个是必须要写吗，如果在story里写了还是需要写么，两个地方写的区别是什么
+  - rule: active check_translimit_form trans
+    steps:
+    - intent: check_trans_limt
+    - action: check_translimit_form
+    - active_loop: check_translimit_form
+
+  - rule: active check_translimit_form onlinepay
+    steps:
+    - intent: check_onlinepay_limit
+    - action: check_translimit_form
+    - active_loop: check_translimit_form
+
+  - rule: active check_translimit_form withdraw
+    steps:
+    - intent: check_bankcard_withdraw_limit
+    - action: check_translimit_form
+    - active_loop: check_translimit_form
+
+  - rule: active check_translimit_form pos
+    steps:
+    - intent: check_pos_limit
+    - action: check_translimit_form
+    - active_loop: check_translimit_form
+
+  - rule: active check_translimit_form credit
+    steps:
+    - intent: check_credit_limit
+    - action: check_translimit_form
+    - active_loop: check_translimit_form
+
+  - rule: active check_banlance_form
+    steps:
+    - intent: check_banlance
+    - action: check_banlance_form
+    - active_loop: check_banlance_form
+
+  - rule: submit check_banlance_form
+    condition:
+    - active_loop: check_banlance_form
+    steps:
+    - action: check_banlance_form
+    - active_loop: null
+    - action: action_submit_banlance
+
+  - rule: active check_bank_name_form
+    steps:
+    - intent: check_bank_name
+    - action: check_bank_name_form
+    - active_loop: check_bank_name_form
+
+  - rule: submit check_bank_name_form
+    condition:
+    - active_loop: check_bank_name_form
+    steps:
+    - action: check_bank_name_form
+    - active_loop: null
+    - action: action_submit_bank_name
+
+  - rule: active check_rate_form
+    steps:
+    - intent: check_rate
+    - action: check_rate_form
+    - active_loop: check_rate_form
+
+  - rule: submit check_rate_form
+    condition:
+    - active_loop: check_rate_form
+    steps:
+    - action: check_rate_form
+    - active_loop: null
+    - action: action_submit_rate
+
+  - rule: active check_annual_fee_form
+    steps:
+    - intent: check_annual_fee
+    - action: check_annual_fee_form
+    - active_loop: check_annual_fee_form
+
+  - rule: submit check_annual_fee_form
+    condition:
+    - active_loop: check_annual_fee_form
+    steps:
+    - action: check_annual_fee_form
+    - active_loop: null
+    - action: action_submit_annual_fee
+
+  - rule: active check_integral_form
+    steps:
+    - intent: check_integral
+    - action: check_integral_form
+    - active_loop: check_integral_form
+
+  - rule: submit check_integral_form
+    condition:
+    - active_loop: check_integral_form
+    steps:
+    - action: check_integral_form
+    - active_loop: null
+    - action: action_submit_integral
+
+  - rule: active check_password_form
+    steps:
+    - intent: check_password
+    - action: check_password_form
+    - active_loop: check_password_form
+
+  - rule: submit check_password_form
+    condition:
+    - active_loop: check_password_form
+    steps:
+    - action: check_password_form
+    - active_loop: null
+    - action: action_submit_password
+
+  - rule: active check_sms_reminder_form
+    steps:
+    - intent: check_sms_reminder
+    - action: check_sms_reminder_form
+    - active_loop: check_sms_reminder_form
+
+  - rule: submit check_sms_reminder_form
+    condition:
+    - active_loop: check_sms_reminder_form
+    steps:
+    - action: check_sms_reminder_form
+    - active_loop: null
+    - action: action_submit_sms_reminder
+
+  - rule: active check_repayment_method_form
+    steps:
+    - intent: check_repayment_method
+    - action: check_repayment_method_form
+    - active_loop: check_repayment_method_form
+
+  - rule: submit check_repayment_method_form
+    condition:
+    - active_loop: check_repayment_method_form
+    steps:
+    - action: check_repayment_method_form
+    - active_loop: null
+    - action: action_submit_repayment_method
+
+
+
+
+

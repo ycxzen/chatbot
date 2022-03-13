@@ -1,0 +1,666 @@
+version: "2.0"
+
+intents:
+  - atm_withdraw
+  - auto_repayment
+  - auto_repayment_other_bank
+  - bye
+  - card_annual_fee
+  - card_bank_name
+  - card_integral
+  - card_sms_reminder
+  - card_sms_reminder_mobile
+  - card_sms_reminder_professional
+  - card_sms_reminder_public
+  - card_withdraw
+  - change_card_login_password
+  - change_card_mobile_login_password
+  - change_card_password
+  - change_card_payment_password
+  - change_card_professional_login_password
+  - change_card_public_login_password
+  - change_card_query_password
+  - change_card_withdrawals_password
+  - change_credit_check_password
+  - change_credit_password
+  - change_credit_trans_password
+  - check_annual_fee
+  - check_atm_abroad_withdraw
+  - check_atm_territory_withdraw
+  - check_atm_trans
+  - check_atm_withdraw
+  - check_bank_name
+  - check_bankcard_withdraw_limit
+  - check_banlance
+  - check_card_limit
+  - check_card_limit_abroad
+  - check_card_limit_territory
+  - check_card_withdraw_limit
+  - check_credit_limit
+  - check_credit_limit_mc
+  - check_credit_limit_using
+  - check_credit_shuaka_limit
+  - check_credit_withdraw_limit
+  - check_details
+  - check_guitai_transaction_limit
+  - check_hand_credit_limit
+  - check_integral
+  - check_kuaijie_paylimit
+  - check_message_credit_limit
+  - check_mobile_credit_limit
+  - check_mobile_trans
+  - check_onlinebank_credit_limit
+  - check_onlinepay_limit
+  - check_password
+  - check_pos_limit
+  - check_professional_paylimit
+  - check_professional_trans
+  - check_public_trans
+  - check_rate
+  - check_repayment_method
+  - check_sms_reminder
+  - check_trans_limt
+  - check_transaction_limit
+  - check_yiwangtong_paylimit
+  - credit_annual_fee
+  - credit_bank_name
+  - credit_integral
+  - credit_withdraw
+  - deposit
+  - deposit_rate
+  - financial_product
+  - financial_product_rate
+  - greet
+  - guitai_withdraw
+  - hand_life_credit_integral
+  - inform
+  - inform_abroad
+  - inform_atm
+  - inform_bankcard
+  - inform_card
+  - inform_card_shuaka
+  - inform_credit
+  - inform_credit_pay
+  - inform_credit_shuaka
+  - inform_guitai
+  - inform_handlife
+  - inform_kuaijie_pay
+  - inform_making_card
+  - inform_message
+  - inform_mobile
+  - inform_onlinebank
+  - inform_onlinepay
+  - inform_pos
+  - inform_professional
+  - inform_professional_pay
+  - inform_territory
+  - inform_trans
+  - inform_using
+  - inform_yiwangtong_pay
+  - loan
+  - loan_rate
+  - login_password
+  - manual_transfer
+  - manual_transfer_other_bank_repayment
+  - mobile_banlance
+  - mobile_card_bank_name
+  - mobile_card_integral
+  - mobile_credit_integral
+  - mobile_integral
+  - onlinebank_credit_integral
+  - other_bank
+  - other_bank_repayment_method
+  - own_bank
+  - own_bank_repayment_method
+  - payment_password
+  - professional_banlance
+  - professional_card_bank_name
+  - professional_card_integral
+  - professional_integral
+  - public_banlance
+  - public_card_bank_name
+  - public_card_integral
+  - public_integral
+  - query_password
+  - thankyou
+  - transaction_password
+  - wechat
+  - wechat_credit_integral
+  - withdrawal_password
+
+entities:
+  - transaction_limit_first_level
+  - transaction_limit_credit
+  - mode
+  - transaction_limit_online_payment
+  - transaction_limit_bank_withdraw_card
+  - transaction_limit_card
+  - transaction_limit_pos
+  - transaction_limit_bank_withdraw
+  - card_type
+  - rate_type
+  - password_type
+  - repayment_method_own_other
+  - repayment_method_other
+
+slots:
+  transaction_limit_first_level:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  transaction_limit_credit:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  mode:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  transaction_limit_online_payment:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  transaction_limit_bank_withdraw_card:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  transaction_limit_card:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  transaction_limit_pos:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  transaction_limit_bank_withdraw:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  card_type:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  rate_type:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  password_type:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  repayment_method_own_other:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+  repayment_method_other:
+    type: text
+    influence_conversation: false
+    auto_fill: ture
+
+responses:
+  utter_ask_transaction_limit_first_level:
+    - text: "请问您是想查询以下哪种额度：信用卡额度 转账汇款限额 网上支付 银行卡取款 POS刷卡"
+  utter_ask_transaction_limit_credit:
+    - text: "请问您想查询哪种情况的额度：使用中的 制卡中的"
+  utter_ask_mode:
+    - text: "您想查询以下哪个渠道:专业版,大众版,手机银行"
+  utter_ask_transaction_limit_online_payment:
+    - text: "您可以通过对应的支付方式查看额度：一网通支付 信用卡支付 快捷支付 专业版支付"
+  utter_ask_transaction_limit_bank_withdraw_card:
+    - text: "请选择以下渠道：atm 柜台？"
+  utter_ask_transaction_limit_card:
+    - text: "请选择以下渠道：境内 境外"
+  utter_ask_transaction_limit_pos:
+    - text: "请选择：一卡通刷卡限额 信用卡刷卡限额"
+  utter_ask_transaction_limit_bank_withdraw:
+    - text: "一卡通取款限额 信用卡取款限额"
+  utter_ask_card_type:
+    - text: "一卡通还是信用卡呢？"
+  utter_ask_rate_type:
+    - text: "请问是以下哪种利率：贷款利率，存款利率，理财产品利率"
+  utter_ask_password_type:
+    - text: "请问是修改以下哪种密码：登录密码，查询密码，取款密码，支付密码"
+  utter_ask_repayment_method_own_other:
+    - text: "请问是给本行还是他行还款"
+  utter_ask_repayment_method_other:
+    - text: "请问是手动转账还是自动还款"
+  utter_bye:
+    - text: "好的，祝您生活愉快"
+  utter_greet:
+    - text: "您好，请问有什么可以帮您？"
+  utter_default:
+    - text: "请详细说明下您的问题哦"
+  utter_ask_mode_credit_limit:
+    - text: "您想查询以下哪个渠道:手机银行, 网上银行, 掌上生活, 短信"
+  utter_ask_mode_trans_limit:
+    - text: "您想查询以下哪个渠道:手机银行, ATM, 专业版, 大众版"
+
+actions:
+  - validate_check_details_form
+  - validate_check_translimit_form
+  - validate_check_banlance_form
+  - validate_check_bank_name_form
+  - validate_check_rate_form
+  - validate_check_annual_fee_form
+  - validate_check_integral_form
+  - validate_check_password_form
+  - validate_check_sms_reminder_form
+  - validate_check_repayment_method_form
+  - action_submit_results
+  - action_submit_translimit
+  - action_submit_banlance
+  - action_submit_bank_name
+  - action_submit_rate
+  - action_submit_annual_fee
+  - action_submit_integral
+  - action_submit_password
+  - action_submit_sms_reminder
+  - action_submit_repayment_method
+  - action_ask_mode
+  - action_ask_password_type
+
+forms:
+  check_details_form:
+    required_slots:
+      mode:
+      - type: from_entity
+        entity: mode
+        intent: [check_details,inform_professional,inform,inform_mobile]
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+      card_type:
+      - type: from_entity
+        entity: card_type
+        intent: [check_details,inform_card,inform_credit]
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡
+  check_translimit_form:
+    required_slots:
+      transaction_limit_first_level:
+      - type: from_entity
+        entity: transaction_limit_first_level
+        intent: [check_transaction_limit, check_credit_limit, check_trans_limt, check_onlinepay_limit,check_bankcard_withdraw_limit, check_pos_limit, inform_pos, inform_trans, inform_onlinepay,inform_bankcard]
+        not_intent: [inform_credit_pay]
+      - type: from_intent
+        intent: [check_credit_limit]
+        value: 信 用 卡 额 度
+      - type: from_trigger_intent
+        intent: [check_credit_limit]
+        value: 信 用 卡 额 度
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡 额 度
+      - type: from_intent
+        intent: [check_trans_limt]
+        value: 转 账 汇 款
+      - type: from_trigger_intent
+        intent: [check_trans_limt]
+        value: 转 账 汇 款
+      - type: from_intent
+        intent: [inform_trans]
+        value: 转 账 汇 款
+      - type: from_intent
+        intent: [check_bankcard_withdraw_limit]
+        value: 银 行 卡 取 款
+      - type: from_trigger_intent
+        intent: [check_bankcard_withdraw_limit]
+        value: 银 行 卡 取 款
+      - type: from_intent
+        intent: [inform_bankcard]
+        value: 银 行 卡 取 款
+      - type: from_intent
+        intent: [inform_card]
+        value: 银 行 卡 取 款
+      - type: from_trigger_intent
+        intent: [check_pos_limit]
+        value: p o s 刷 卡
+      - type: from_intent
+        intent: [check_pos_limit]
+        value: p o s 刷 卡
+      - type: from_intent
+        intent: [inform_pos]
+        value: p o s 刷 卡
+      - type: from_intent
+        intent: [check_onlinepay_limit]
+        value: 网 上 支 付
+      - type: from_trigger_intent
+        intent: [check_onlinepay_limit]
+        value: 网 上 支 付
+      - type: from_intent
+        intent: [inform_onlinepay]
+        value: 网 上 支 付
+      transaction_limit_credit:
+      - type: from_entity
+        entity: transaction_limit_credit
+        intent: [inform_making_card, inform_using]
+      - type: from_intent
+        intent: [inform_making_card]
+        value: 使 用 中
+      - type: from_intent
+        intent: [inform_using]
+        value: 制 卡
+      mode:
+      - type: from_entity
+        entity: mode
+        intent: [inform_mobile,inform_onlinebank, inform_handlife, inform_message,    inform_atm,inform_professional,inform]
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+      - type: from_intent
+        intent: [inform_onlinebank]
+        value: 网 上 银 行
+      - type: from_intent
+        intent: [inform_handlife]
+        value: 掌 上 生 活
+      - type: from_intent
+        intent: [inform_message]
+        value: 短 信
+      - type: from_intent
+        intent: [inform_atm]
+        value: a t m
+      transaction_limit_online_payment:
+      - type: from_entity
+        entity: transaction_limit_online_payment
+        intent: [inform_yiwangtong_pay, inform_professional_pay,     inform_kuaijie_pay,inform_credit_pay,check_kuaijie_paylimit]
+      - type: from_intent
+        intent: [inform_credit_pay]
+        value: 信 用 卡 支 付
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡 支 付
+      - type: from_intent
+        intent: [inform_professional_pay]
+        value: 专 业 版 支 付
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版 支 付
+      - type: from_intent
+        intent: [inform_kuaijie_pay]
+        value: 快 捷 支 付
+      - type: from_intent
+        intent: [inform_yiwangtong_pay]
+        value: 一 网 通 支 付
+      transaction_limit_bank_withdraw:
+      - type: from_entity
+        entity: transaction_limit_online_payment
+        intent: [check_card_withdraw_limit, check_credit_withdraw_limit]
+      - type: from_intent
+        intent: [inform_bankcard]
+        value: 一 卡 通 取 款
+      - type: from_intent
+        intent: [check_credit_withdraw_limit]
+        value: 信 用 卡 取 款
+      - type: from_intent
+        intent: [inform_credit_withdraw]
+        value: 信 用 卡 取 款
+      - type: from_intent
+        intent: [check_card_withdraw_limit]
+        value: 一 卡 通 取 款
+      - type: from_intent
+        intent: [inform_card_withdraw]
+        value: 一 卡 通 取 款
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通 取 款
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡 取 款
+      transaction_limit_bank_withdraw_card:
+      - type: from_entity
+        entity: transaction_limit_bank_withdraw_card
+        intent: [inform_atm, inform_guitai, check_atm_withdraw,check_atm_territory_withdraw,check_atm_abroad_withdraw, check_guitai_transaction_limit]
+      - type: from_intent
+        intent: [inform_guitai]
+        value: 柜 台
+      - type: from_intent
+        intent: [inform_atm]
+        value: a t m
+      - type: from_intent
+        intent: [atm_withdraw]
+        value: a t m
+      - type: from_intent
+        intent: [check_atm_withdraw]
+        value: a t m
+      - type: from_intent
+        intent: [guitai_withdraw]
+        value: 柜 台
+      - type: from_intent
+        intent: [check_guitai_transaction_limit]
+        value: 柜 台
+      transaction_limit_pos:
+      - type: from_entity
+        entity: transaction_limit_card
+        intent: [check_card_limit, check_credit_limit,    check_card_limit_territory, check_card_limit_abroad]
+      - type: from_intent
+        intent: [check_card_limit]
+        value: 一 卡 通 刷 卡
+      - type: from_intent
+        intent: [check_credit_shuaka_limit]
+        value: 信 用 卡 刷 卡
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通 刷 卡
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡 刷 卡
+      transaction_limit_card:
+      - type: from_entity
+        entity: transaction_limit_card
+        intent: [inform_territory, inform_abroad]
+      - type: from_intent
+        intent: [inform_territory]
+        value: 境 内
+      - type: from_intent
+        intent: [inform_abroad]
+        value: 境 外
+  check_banlance_form:
+    required_slots:
+      mode:
+      - type: from_entity
+        entity: mode
+        intent: [check_banlance,inform_professional,inform,inform_mobile]
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+  check_bank_name_form:
+    required_slots:
+      mode:
+      - type: from_entity
+        entity: mode
+        intent: [check_banlance,inform_professional,inform,inform_mobile]
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+      card_type:
+      - type: from_entity
+        entity: card_type
+        intent: [check_bank_name,inform_card,inform_credit]
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡
+  check_rate_form:
+    required_slots:
+      rate_type:
+      - type: from_entity
+        entity: rate_type
+        intent: [deposit_rate, loan_rate,financial_product_rate,financial_product,deposit, loan]
+      - type: from_intent
+        intent: [deposit_rate,deposit]
+        value: 存 款
+      - type: from_intent
+        intent: [loan_rate,loan]
+        value: 贷 款
+      - type: from_intent
+        intent: [financial_product_rate,financial_product]
+        value: 存 款
+  check_annual_fee_form:
+    required_slots:
+      card_type:
+      - type: from_entity
+        entity: card_type
+        intent: [check_annual_fee,inform_card,inform_credit]
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡
+  check_integral_form:
+    required_slots:
+      card_type:
+      - type: from_entity
+        entity: card_type
+        intent: [check_integral,inform_card,inform_credit]
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡
+      mode:
+      - type: from_entity
+        entity: mode
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+      - type: from_intent
+        intent: [inform_onlinebank]
+        value: 网 上 银 行
+      - type: from_intent
+        intent: [inform_handlife]
+        value: 掌 上 生 活
+      - type: from_intent
+        intent: [wechat]
+        value: 微 信
+  check_password_form:
+    required_slots:
+      card_type:
+      - type: from_entity
+        entity: card_type
+        intent: [check_password,inform_card,inform_credit]
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡
+      password_type:
+      - type: from_entity
+        entity: password_type
+        intent: [check_password, change_card_password, change_credit_password, change_card_login_password, change_card_query_password, change_card_withdrawals_password, change_card_payment_password,change_card_professional_login_password,change_card_mobile_login_password,change_card_public_login_password,'change_credit_check_password','change_credit_trans_password', login_password, query_password, withdrawal_password, payment_password, transaction_password]
+      - type: from_intent
+        intent: query_password
+        value: 查 询
+      - type: from_intent
+        intent: login_password
+        value: 登 录
+      - type: from_intent
+        intent: withdrawal_password
+        value: 取 款
+      - type: from_intent
+        intent: payment_password
+        not_intent: check_kuaijie_paylimit
+        value: 支 付
+      - type: from_intent
+        intent: transaction_password
+        value: 交 易
+      mode:
+      - type: from_entity
+        entity: mode
+        intent: [check_password,inform_professional,inform,inform_mobile]
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+  check_sms_reminder_form:
+    required_slots:
+      card_type:
+      - type: from_entity
+        entity: card_type
+        intent: [check_sms_reminder,inform_card,inform_credit]
+      - type: from_intent
+        intent: [inform_card]
+        value: 一 卡 通
+      - type: from_intent
+        intent: [inform_credit]
+        value: 信 用 卡
+      mode:
+      - type: from_entity
+        entity: mode
+        intent: [check_sms_reminder,inform_professional,inform,inform_mobile]
+      - type: from_intent
+        intent: [inform]
+        value: 大 众 版
+      - type: from_intent
+        intent: [inform_professional]
+        value: 专 业 版
+      - type: from_intent
+        intent: [inform_mobile]
+        value: 手 机 银 行
+  check_repayment_method_form:
+    required_slots:
+      repayment_method_own_other:
+      - type: from_entity
+        entity: repayment_method_own_other
+      - type: from_intent
+        intent: [other_bank]
+        value: 他 行
+      - type: from_intent
+        intent: [other_bank]
+        value: 本 行
+      repayment_method_other:
+      - type: from_entity
+        entity: repayment_method_other
+      - type: from_intent
+        intent: [manual_transfer]
+        value: 手 动
+      - type: from_intent
+        intent: [auto_repayment]
+        value: 自 动
+
+session_config:
+  session_expiration_time: 5
+  carry_over_slots_to_new_session: true
